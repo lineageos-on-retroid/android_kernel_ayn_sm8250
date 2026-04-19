@@ -1,0 +1,47 @@
+&L14A {
+	qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
+};
+
+&L3C {
+	regulator-min-microvolt = <1200000>;
+	qcom,init-voltage = <1200000>;
+	qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
+};
+
+&L11C {
+	regulator-min-microvolt = <3304000>;
+	qcom,init-voltage = <3304000>;
+	qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
+};
+
+&L1F {
+	status = "disabled";
+};
+
+&L2F {
+	status = "disabled";
+};
+
+&L3F {
+	status = "disabled";
+};
+
+&L5F {
+	status = "disabled";
+};
+
+&L6F {
+	status = "disabled";
+};
+
+&L7F {
+	status = "disabled";
+};
+
+&S1F {
+	status = "disabled";
+};
+
+&S2F {
+	status = "disabled";
+};
