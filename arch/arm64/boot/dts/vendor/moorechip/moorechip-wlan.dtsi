@@ -1,0 +1,21 @@
+&wlan {
+	/delete-property/ cnss-enable-self-recovery;
+	/delete-property/ qcom,sw-ctrl-gpio;
+	/delete-property/ qcom,vdd-wlan-dig-config;
+	/delete-property/ vdd-wlan-dig-supply;
+
+	qcom,msm-bus,num-cases = <6>;
+	qcom,msm-bus,vectors-KBps =
+		/* no vote */
+		<MSM_BUS_MASTER_PCIE MSM_BUS_SLAVE_FIRST 0 0>,
+		/* idle: 0-18 Mbps, ddr freq: 451.2 MHz */
+		<MSM_BUS_MASTER_PCIE MSM_BUS_SLAVE_FIRST 2250 1600000>,
+		/* low: 18-60 Mbps, ddr freq: 451.2 MHz*/
+		<MSM_BUS_MASTER_PCIE MSM_BUS_SLAVE_FIRST 7500 1600000>,
+		/* medium: 60-240 Mbps, ddr freq: 451.2 MHz */
+		<MSM_BUS_MASTER_PCIE MSM_BUS_SLAVE_FIRST 30000 1804800>,
+		/* high: 240 - 800 Mbps, ddr freq: 451.2 MHz */
+		<MSM_BUS_MASTER_PCIE MSM_BUS_SLAVE_FIRST 100000 1804800>,
+		/* very high: 800 - 1400 Mbps, ddr freq: 1555.2 MHz */
+		<MSM_BUS_MASTER_PCIE MSM_BUS_SLAVE_FIRST 175000 6220800>;
+};

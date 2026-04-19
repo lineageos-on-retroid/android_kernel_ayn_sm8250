@@ -5,3 +5,4 @@
 #include "moorechip-sde.dtsi"
 #include "moorechip-uart.dtsi"
 #include "moorechip-usb.dtsi"
+#include "moorechip-wlan.dtsi"
