@@ -4,3 +4,4 @@
 #include "moorechip-regulators.dtsi"
 #include "moorechip-sde.dtsi"
 #include "moorechip-uart.dtsi"
+#include "moorechip-usb.dtsi"
