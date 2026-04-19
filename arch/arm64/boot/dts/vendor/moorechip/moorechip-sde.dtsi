@@ -1,0 +1,36 @@
+&sde_dp {
+	/delete-property/ qcom,dsc-feature-enable;
+	/delete-property/ qcom,fec-feature-enable;
+	/delete-property/ qcom,max-dp-dsc-blks;
+	/delete-property/ qcom,max-dp-dsc-input-width-pixs;
+
+	qcom,max-lclk-frequency-khz = <270000>;
+};
+
+&tlmm {
+	sde_dp_aux_active: sde_dp_aux_active {
+		config {
+			bias-disable = <0>;
+			drive-strength = <8>;
+			pins = "gpio8", "gpio9";
+		};
+
+		mux {
+			function = "gpio";
+			pins = "gpio8", "gpio9";
+		};
+	};
+
+	sde_dp_aux_suspend: sde_dp_aux_suspend {
+		config {
+			bias-pull-down;
+			drive-strength = <2>;
+			pins = "gpio8", "gpio9";
+		};
+
+		mux {
+			function = "gpio";
+			pins = "gpio8", "gpio9";
+		};
+	};
+};
