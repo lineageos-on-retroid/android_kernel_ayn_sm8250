@@ -3,3 +3,4 @@
 #include "moorechip-pinctrl.dtsi"
 #include "moorechip-regulators.dtsi"
 #include "moorechip-sde.dtsi"
+#include "moorechip-uart.dtsi"

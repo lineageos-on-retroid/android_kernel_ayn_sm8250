@@ -1,0 +1,92 @@
+/ {
+	aliases {
+		hsuart1 = &qupv3_se16_2uart;
+	};
+};
+
+&tlmm {
+	qupv3_se16_2uart_pins: qupv3_se16_2uart_pins {
+		qupv3_se16_rx: qupv3_se16_rx {
+			config {
+				bias-pull-up;
+				drive-strength = <0x02>;
+				pins = "gpio51";
+			};
+
+			mux {
+				function = "qup16";
+				pins = "gpio51";
+			};
+		};
+
+		qupv3_se16_sleep: qupv3_se16_sleep {
+			config {
+				bias-pull-down;
+				drive-strength = <0x02>;
+				pins = "gpio50", "gpio51";
+			};
+
+			mux {
+				function = "gpio";
+				pins = "gpio50", "gpio51";
+			};
+		};
+
+		qupv3_se16_tx: qupv3_se16_tx {
+			config {
+				bias-pull-up;
+				drive-strength = <0x02>;
+				pins = "gpio50";
+			};
+
+			mux {
+				function = "qup16";
+				pins = "gpio50";
+			};
+		};
+	};
+};
+
+&qupv3_se18_i2c_active {
+	mux {
+		pins = "gpio56", "gpio55";
+	};
+
+	config {
+		pins = "gpio56", "gpio55";
+	};
+};
+
+&qupv3_se18_i2c_sleep {
+	mux {
+		pins = "gpio56", "gpio55";
+	};
+
+	config {
+		pins = "gpio56", "gpio55";
+	};
+};
+
+&soc {
+	qupv3_se16_2uart: qcom,qup_uart@888000 {
+		compatible = "qcom,msm-geni-serial-hs";
+		reg = <0x888000 0x4000>;
+		reg-names = "se_phys";
+		clock-names = "se-clk", "m-ahb", "s-ahb";
+		clocks = <&clock_gcc GCC_QUPV3_WRAP2_S2_CLK>,
+				<&clock_gcc GCC_QUPV3_WRAP_2_M_AHB_CLK>,
+				<&clock_gcc GCC_QUPV3_WRAP_2_S_AHB_CLK>;
+		pinctrl-names = "default", "sleep";
+		pinctrl-0 = <&qupv3_se16_rx>, <&qupv3_se16_tx>;
+		pinctrl-1 = <&qupv3_se16_rx>, <&qupv3_se16_tx>;
+		interrupts-extended = <&intc GIC_SPI 584 IRQ_TYPE_LEVEL_HIGH>;
+		qcom,auto-suspend-disable;
+		qcom,wrapper-core = <&qupv3_2>;
+		qcom,wakeup-byte = <0xfd>;
+		status = "ok";
+	};
+};
+
+&qupv3_se6_4uart {
+	qcom,auto-suspend-disable;
+};
