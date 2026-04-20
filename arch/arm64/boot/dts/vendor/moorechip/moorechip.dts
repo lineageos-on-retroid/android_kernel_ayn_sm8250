@@ -6,3 +6,7 @@
 #include "moorechip-uart.dtsi"
 #include "moorechip-usb.dtsi"
 #include "moorechip-wlan.dtsi"
+
+&pcie0 {
+	/delete-property/ qcom,config-recovery;
+};
