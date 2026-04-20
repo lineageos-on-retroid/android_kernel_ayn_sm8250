@@ -10,3 +10,8 @@
 &pcie0 {
 	/delete-property/ qcom,config-recovery;
 };
+
+&spmi_debug_bus {
+	/delete-node/ qcom,pm8009-debug@a;
+	/delete-node/ qcom,pm8009-debug@b;
+};
