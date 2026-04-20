@@ -1,2 +1,3 @@
 #include "../qcom/kona-hdk.dts"
 #include "moorechip-gpu.dtsi"
+#include "moorechip-pinctrl.dtsi"
