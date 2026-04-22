@@ -64,6 +64,28 @@
 			gpio-controller;
 			#gpio-cells = <2>;
 			qcom,gpios-disallowed = <2 9 12>;
+
+			pm8150l_gpio6_pwm {
+				pmi_gpio6_pwm_active: pmi_gpio6_pwm_active {
+					bias-disable;
+					drive-push-pull;
+					function = "func1";
+					output-low;
+					pins = "gpio6";
+					power-source = <0>;
+					qcom,drive-strength = <3>;
+				};
+
+				pmi_gpio6_pwm_sleep: pmi_gpio6_pwm_sleep {
+					bias-disable;
+					drive-push-pull;
+					function = "func1";
+					output-low;
+					pins = "gpio6";
+					power-source = <0>;
+					qcom,drive-strength = <3>;
+				};
+			};
 		};
 
 		pm8150l_vadc: vadc@3100 {
@@ -162,7 +184,7 @@
 
 		flash_led: qcom,leds@d300 {
 			compatible = "qcom,qpnp-flash-led-v2";
-			status = "okay";
+			status = "disable";
 			reg = <0xd300 0x100>;
 			label = "flash";
 			interrupts = <0x5 0xd3 0x0 IRQ_TYPE_EDGE_RISING>,
@@ -217,7 +239,6 @@
 				qcom,ires-ua = <12500>;
 				qcom,hdrm-voltage-mv = <325>;
 				qcom,hdrm-vol-hi-lo-win-mv = <100>;
-				status = "disabled";
 			};
 
 			pm8150l_torch0: qcom,torch_0 {
@@ -254,7 +275,6 @@
 				qcom,ires-ua = <12500>;
 				qcom,hdrm-voltage-mv = <325>;
 				qcom,hdrm-vol-hi-lo-win-mv = <100>;
-				status = "disabled";
 			};
 
 			pm8150l_switch0: qcom,led_switch_0 {

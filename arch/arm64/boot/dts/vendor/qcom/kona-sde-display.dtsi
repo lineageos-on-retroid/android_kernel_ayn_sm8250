@@ -25,17 +25,19 @@
 #include "dsi-panel-nt36672e-fhd-plus-60hz-video.dtsi"
 #include "dsi-panel-arglass-seeya-dual-1080p-video.dtsi"
 #include "dsi-panel-arglass-seeya-dual-1080p-90hz-video.dtsi"
+#include "dsi-panel-ch13726a-amoled-video.dtsi"
+
 #include <dt-bindings/clock/mdss-7nm-pll-clk.h>
 
 &tlmm {
 	display_panel_avdd_default: display_panel_avdd_default {
 		mux {
-			pins = "gpio61";
+			pins = "gpio4";
 			function = "gpio";
 		};
 
 		config {
-			pins = "gpio61";
+			pins = "gpio4";
 			drive-strength = <8>;
 			bias-disable = <0>;
 			output-high;
@@ -69,8 +71,8 @@
 		qcom,panel-supply-entry@1 {
 			reg = <1>;
 			qcom,supply-name = "vdd";
-			qcom,supply-min-voltage = <3300000>;
-			qcom,supply-max-voltage = <3300000>;
+			qcom,supply-min-voltage = <3304000>;
+			qcom,supply-max-voltage = <3304000>;
 			qcom,supply-enable-load = <857000>;
 			qcom,supply-disable-load = <0>;
 			qcom,supply-post-on-sleep = <0>;
@@ -93,6 +95,25 @@
 			qcom,supply-enable-load = <100000>;
 			qcom,supply-disable-load = <100>;
 			qcom,supply-post-on-sleep = <20>;
+		};
+
+		qcom,panel-supply-entry@4 {
+			reg = <4>;
+			qcom,supply-name = "vdd1v2";
+			qcom,supply-min-voltage = <1200000>;
+			qcom,supply-max-voltage = <1200000>;
+			qcom,supply-enable-load = <100000>;
+			qcom,supply-disable-load = <100>;
+			qcom,supply-post-on-sleep = <20>;
+		};
+
+		qcom,panel-supply-entry@5 {
+			reg = <5>;
+			qcom,supply-name = "avdd";
+			qcom,supply-min-voltage = <0x2ab980>;
+			qcom,supply-max-voltage = <0x2ab980>;
+			qcom,supply-enable-load = <100000>;
+			qcom,supply-disable-load = <10>;
 		};
 	};
 
@@ -157,10 +178,10 @@
 	display_panel_avdd: display_gpio_regulator@1 {
 		compatible = "regulator-fixed";
 		regulator-name = "display_panel_avdd";
-		regulator-min-microvolt = <5500000>;
-		regulator-max-microvolt = <5500000>;
+		regulator-min-microvolt = <2800000>;
+		regulator-max-microvolt = <2800000>;
 		regulator-enable-ramp-delay = <233>;
-		gpio = <&tlmm 61 0>;
+		gpio = <&tlmm 4 0>;
 		enable-active-high;
 		regulator-boot-on;
 		pinctrl-names = "default";
@@ -214,13 +235,12 @@
 		qcom,panel-te-source = <0>;
 
 		vddio-supply = <&pm8150_l14>;
+		vdd1v2-supply = <&pm8150a_l3>;
 		vdd-supply = <&pm8150a_l11>;
 		avdd-supply = <&display_panel_avdd>;
-		lab-supply = <&ab_vreg>;
-		ibb-supply = <&ibb_vreg>;
 
 		qcom,mdp = <&mdss_mdp>;
-		qcom,dsi-default-panel = <&dsi_sw43404_amoled_cmd>;
+		qcom,dsi-default-panel = <&dsi_ch13726a_amoled_video>;
 	};
 
 	sde_dsi1: qcom,dsi-display-secondary {
@@ -257,33 +277,28 @@
 		qcom,mdp = <&mdss_mdp>;
 	};
 
-	sde_wb: qcom,wb-display@0 {
-		compatible = "qcom,wb-display";
-		cell-index = <0>;
-		label = "wb_display";
-	};
-
 	msm_notifier: qcom,msm_notifier@0 {
 		compatible = "qcom,msm-notifier";
-		panel = <&dsi_sw43404_amoled_cmd &dsi_sharp_qsync_wqhd_cmd
-			&dsi_dual_sim_dsc_375_cmd>;
+		panel = <&dsi_ch13726a_amoled_video>;
 	};
 };
 
 &sde_dp {
 	qcom,dp-usbpd-detection = <&pm8150b_pdphy>;
 	qcom,ext-disp = <&ext_disp>;
-	qcom,dp-aux-switch = <&fsa4480>;
+	qcom,aux-en-gpio = <&tlmm 9 0>;
+	qcom,aux-sel-gpio = <&tlmm 8 0>;
+	qcom,dp-gpio-aux-switch;
 
 	qcom,usbplug-cc-gpio = <&tlmm 65 0>;
 
 	pinctrl-names = "mdss_dp_active", "mdss_dp_sleep";
-	pinctrl-0 = <&sde_dp_usbplug_cc_active>;
-	pinctrl-1 = <&sde_dp_usbplug_cc_suspend>;
+	pinctrl-0 = <&sde_dp_aux_active &sde_dp_usbplug_cc_active>;
+	pinctrl-1 = <&sde_dp_aux_suspend &sde_dp_usbplug_cc_suspend>;
 };
 
 &mdss_mdp {
-	connectors = <&sde_dp &sde_wb &sde_dsi &sde_dsi1 &sde_rscc>;
+	connectors = <&sde_dp &sde_dsi &sde_rscc>;
 };
 
 /* PHY TIMINGS REVISION W */

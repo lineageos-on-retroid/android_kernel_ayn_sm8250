@@ -5,7 +5,7 @@
 		flash-source = <&pm8150l_flash0 &pm8150l_flash1>;
 		torch-source = <&pm8150l_torch0 &pm8150l_torch1>;
 		switch-source = <&pm8150l_switch2>;
-		status = "ok";
+		status = "disable";
 	};
 
 	led_flash_rear_aux: qcom,camera-flash1 {
@@ -14,7 +14,7 @@
 		flash-source = <&pm8150l_flash0 &pm8150l_flash1>;
 		torch-source = <&pm8150l_torch0 &pm8150l_torch1>;
 		switch-source = <&pm8150l_switch2>;
-		status = "ok";
+		status = "disable";
 	};
 
 	led_flash_triple_rear: qcom,camera-flash@4 {
@@ -23,7 +23,7 @@
 		flash-source = <&pm8150l_flash0 &pm8150l_flash1>;
 		torch-source = <&pm8150l_torch0 &pm8150l_torch1>;
 		switch-source = <&pm8150l_switch2>;
-		status = "ok";
+		status = "disable";
 	};
 
 	led_flash_triple_rear_aux: qcom,camera-flash@5 {
@@ -32,7 +32,7 @@
 		flash-source = <&pm8150l_flash0 &pm8150l_flash1>;
 		torch-source = <&pm8150l_torch0 &pm8150l_torch1>;
 		switch-source = <&pm8150l_switch2>;
-		status = "ok";
+		status = "disable";
 	};
 
 	led_flash_triple_rear_aux2: qcom,camera-flash@6 {
@@ -41,12 +41,12 @@
 		flash-source = <&pm8150l_flash0 &pm8150l_flash1>;
 		torch-source = <&pm8150l_torch0 &pm8150l_torch1>;
 		switch-source = <&pm8150l_switch2>;
-		status = "ok";
+		status = "disable";
 	};
 
 	qcom,cam-res-mgr {
 		compatible = "qcom,cam-res-mgr";
-		status = "ok";
+		status = "disable";
 	};
 };
 
@@ -61,6 +61,7 @@
 		rgltr-min-voltage = <2856000>;
 		rgltr-max-voltage = <3104000>;
 		rgltr-load-current = <100000>;
+		status = "disable";
 	};
 
 	actuator_rear_aux: qcom,actuator1 {
@@ -73,6 +74,7 @@
 		rgltr-min-voltage = <2856000>;
 		rgltr-max-voltage = <3104000>;
 		rgltr-load-current = <100000>;
+		status = "disable";
 	};
 
 	actuator_triple_wide: qcom,actuator4 {
@@ -85,6 +87,7 @@
 		rgltr-min-voltage = <2856000>;
 		rgltr-max-voltage = <3104000>;
 		rgltr-load-current = <100000>;
+		status = "disable";
 	};
 
 	actuator_triple_tele: qcom,actuator5 {
@@ -97,6 +100,7 @@
 		rgltr-min-voltage = <2856000>;
 		rgltr-max-voltage = <3104000>;
 		rgltr-load-current = <100000>;
+		status = "disable";
 	};
 
 	actuator_triple_uw: qcom,actuator6 {
@@ -109,6 +113,7 @@
 		rgltr-min-voltage = <2856000>;
 		rgltr-max-voltage = <3104000>;
 		rgltr-load-current = <100000>;
+		status = "disable";
 	};
 
 	eeprom_rear: qcom,eeprom0 {
@@ -141,7 +146,7 @@
 		sensor-position = <0>;
 		sensor-mode = <0>;
 		cci-master = <0>;
-		status = "ok";
+		status = "disable";
 		clocks = <&clock_camcc CAM_CC_MCLK0_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "turbo";
@@ -178,7 +183,7 @@
 		sensor-position = <0>;
 		sensor-mode = <0>;
 		cci-master = <1>;
-		status = "ok";
+		status = "disable";
 		clocks = <&clock_camcc CAM_CC_MCLK2_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "turbo";
@@ -215,7 +220,7 @@
 		sensor-position = <0>;
 		sensor-mode = <0>;
 		cci-master = <0>;
-		status = "ok";
+		status = "disable";
 		clocks = <&clock_camcc CAM_CC_MCLK0_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "turbo";
@@ -252,7 +257,7 @@
 		sensor-position = <0>;
 		sensor-mode = <0>;
 		cci-master = <0>;
-		status = "ok";
+		status = "disable";
 		clocks = <&clock_camcc CAM_CC_MCLK2_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "turbo";
@@ -289,7 +294,7 @@
 		sensor-position = <1>;
 		sensor-mode = <0>;
 		cci-master = <1>;
-		status = "ok";
+		status = "disable";
 		clocks = <&clock_camcc CAM_CC_MCLK2_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "turbo";
@@ -333,7 +338,7 @@
 					"CAM_RESET0";
 		sensor-mode = <0>;
 		cci-master = <0>;
-		status = "ok";
+		status = "disable";
 		clocks = <&clock_camcc CAM_CC_MCLK0_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "turbo";
@@ -377,7 +382,7 @@
 					"CAM_RESET1";
 		sensor-mode = <0>;
 		cci-master = <1>;
-		status = "ok";
+		status = "disable";
 		clocks = <&clock_camcc CAM_CC_MCLK1_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "turbo";
@@ -421,7 +426,7 @@
 					"CAM_RESET0";
 		sensor-mode = <0>;
 		cci-master = <0>;
-		status = "ok";
+		status = "disable";
 		clocks = <&clock_camcc CAM_CC_MCLK0_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "turbo";
@@ -465,7 +470,7 @@
 					"CAM_RESET1";
 		sensor-mode = <0>;
 		cci-master = <0>;
-		status = "ok";
+		status = "disable";
 		clocks = <&clock_camcc CAM_CC_MCLK1_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "turbo";
@@ -509,7 +514,7 @@
 					"CAM_RESET2";
 		sensor-mode = <0>;
 		cci-master = <1>;
-		status = "ok";
+		status = "disable";
 		clocks = <&clock_camcc CAM_CC_MCLK2_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "turbo";
@@ -548,7 +553,7 @@
 		sensor-position = <1>;
 		sensor-mode = <0>;
 		cci-master = <0>;
-		status = "ok";
+		status = "disable";
 		clocks = <&clock_camcc CAM_CC_MCLK2_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "turbo";
@@ -583,7 +588,7 @@
 		sensor-position = <1>;
 		sensor-mode = <0>;
 		cci-master = <1>;
-		status = "ok";
+		status = "disable";
 		clocks = <&clock_camcc CAM_CC_MCLK3_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "turbo";
@@ -625,7 +630,7 @@
 					"CAM_RESET2";
 		sensor-mode = <0>;
 		cci-master = <0>;
-		status = "ok";
+		status = "disable";
 		clocks = <&clock_camcc CAM_CC_MCLK2_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "turbo";
@@ -664,7 +669,7 @@
 					"CAM_RESET3";
 		sensor-mode = <0>;
 		cci-master = <1>;
-		status = "ok";
+		status = "disable";
 		clocks = <&clock_camcc CAM_CC_MCLK3_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "turbo";
