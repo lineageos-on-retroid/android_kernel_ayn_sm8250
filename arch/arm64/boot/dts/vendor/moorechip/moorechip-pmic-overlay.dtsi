@@ -1,0 +1,52 @@
+&pm8150b_haptics {
+	qcom,actuator-type = "erm";
+};
+
+&soc_trip {
+	temperature = <1>;
+};
+
+&pm8150l_gpios {
+	pm8150l_gpio6_pwm {
+		pmi_gpio6_pwm_active: pmi_gpio6_pwm_active {
+			bias-disable;
+			drive-push-pull;
+			function = "func1";
+			output-low;
+			pins = "gpio6";
+			power-source = <0>;
+			qcom,drive-strength = <3>;
+		};
+
+		pmi_gpio6_pwm_sleep: pmi_gpio6_pwm_sleep {
+			bias-disable;
+			drive-push-pull;
+			function = "func1";
+			output-low;
+			pins = "gpio6";
+			power-source = <0>;
+			qcom,drive-strength = <3>;
+		};
+	};
+};
+
+&spmi_bus {
+	qcom,pm8009@a {
+		status = "disabled";
+	};
+
+	qcom,pm8009@b {
+		status = "disabled";
+	};
+
+	qcom,pm8150@0 {
+		qcom,power-on@800 {
+			qcom,pon_1 {
+				qcom,s1-timer = <6720>;
+				qcom,s2-timer = <2000>;
+				qcom,s2-type = <4>;
+				qcom,support-reset = <1>;
+			};
+		};
+	};
+};

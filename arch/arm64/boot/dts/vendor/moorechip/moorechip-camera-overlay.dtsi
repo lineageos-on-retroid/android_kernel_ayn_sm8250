@@ -1,0 +1,109 @@
+&led_flash_rear {
+	status = "disable";
+};
+
+&led_flash_rear_aux {
+	status = "disable";
+};
+
+&led_flash_triple_rear {
+	status = "disable";
+};
+
+&led_flash_triple_rear_aux {
+	status = "disable";
+};
+
+&led_flash_triple_rear_aux2 {
+	status = "disable";
+};
+
+&soc {
+	qcom,cam-res-mgr {
+		status = "disable";
+	};
+};
+
+&actuator_rear {
+	status = "disable";
+};
+
+&actuator_rear_aux {
+	status = "disable";
+};
+
+&actuator_triple_wide {
+	status = "disable";
+};
+
+&actuator_triple_tele {
+	status = "disable";
+};
+
+&actuator_triple_uw {
+	status = "disable";
+};
+
+&eeprom_rear {
+	status = "disable";
+};
+
+&eeprom_rear_aux {
+	status = "disable";
+};
+
+&eeprom_triple_wide {
+	status = "disable";
+};
+
+&eeprom_triple_tele {
+	status = "disable";
+};
+
+&eeprom_triple_uw {
+	status = "disable";
+};
+
+&cam_cci0 {
+	qcom,cam-sensor0 {
+		status = "disable";
+	};
+
+	qcom,cam-sensor1 {
+		status = "disable";
+	};
+
+	qcom,cam-sensor4 {
+		status = "disable";
+	};
+
+	qcom,cam-sensor5 {
+		status = "disable";
+	};
+
+	qcom,cam-sensor6 {
+		status = "disable";
+	};
+};
+
+&eeprom_front {
+	status = "disable";
+};
+
+&eeprom_tof {
+	status = "disable";
+};
+
+&cam_cci1 {
+	qcom,cam-sensor2 {
+		status = "disable";
+	};
+
+	qcom,cam-sensor3 {
+		status = "disable";
+	};
+};
+
+&flash_led {
+	status = "disable";
+};

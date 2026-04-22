@@ -1,0 +1,68 @@
+#include "moorechip-audio-overlay.dtsi"
+#include "moorechip-battery-overlay.dtsi"
+#include "moorechip-camera-overlay.dtsi"
+#include "moorechip-fan-overlay.dtsi"
+#include "moorechip-pmic-overlay.dtsi"
+#include "moorechip-sde-overlay.dtsi"
+
+&bluetooth {
+	/delete-property/ qca,bt-vdd-dig-supply;
+	/delete-property/ qca,bt-vdd-dig-voltage-level;
+};
+
+&sdhc_2 {
+	cd-debounce-delay-ms = <2500>;
+};
+
+&qupv3_se1_i2c {
+	status = "disabled";
+
+	nq@28 {
+		status = "disabled";
+	};
+};
+
+&lt9611 {
+	status = "disabled";
+
+	/delete-node/ ports;
+};
+
+&qupv3_se3_i2c {
+	#address-cells = <1>;
+	#size-cells = <0>;
+	status = "ok";
+
+	htr3212r@3c {
+		reg = <0x3c>;
+		compatible = "kona,htr3212r";
+		htr3212r,dv-en2 = <&tlmm 6 0>;
+	};
+};
+
+&qupv3_se5_i2c {
+	#address-cells = <1>;
+	#size-cells = <0>;
+	status = "ok";
+
+	htr3212l@3c {
+		reg = <0x3c>;
+		compatible = "kona,htr3212l";
+		htr3212l,dv-en1 = <&tlmm 5 0>;
+	};
+};
+
+&qupv3_se15_i2c {
+	status = "disabled";
+
+	redriver@1c {
+		status = "disabled";
+	};
+};
+
+&soc {
+	extcon_demo: extcon-demo {
+		compatible = "extcon_demo";
+		status = "okay";
+	};
+};

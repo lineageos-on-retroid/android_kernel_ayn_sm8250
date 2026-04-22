@@ -273,7 +273,10 @@
 &sde_dp {
 	qcom,dp-usbpd-detection = <&pm8150b_pdphy>;
 	qcom,ext-disp = <&ext_disp>;
+#if 0
+	// TODO: Can't overlay :(
 	qcom,dp-aux-switch = <&fsa4480>;
+#endif
 
 	qcom,usbplug-cc-gpio = <&tlmm 65 0>;
 
@@ -283,7 +286,12 @@
 };
 
 &mdss_mdp {
+#if 1
+	// TODO: Can't overlay :(
+	connectors = <&sde_dp &sde_dsi &sde_rscc>;
+#else
 	connectors = <&sde_dp &sde_wb &sde_dsi &sde_dsi1 &sde_rscc>;
+#endif
 };
 
 /* PHY TIMINGS REVISION W */

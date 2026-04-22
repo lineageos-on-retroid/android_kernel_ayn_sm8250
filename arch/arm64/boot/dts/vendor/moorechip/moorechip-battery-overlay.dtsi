@@ -1,0 +1,13 @@
+&kona_qrd_batterydata {
+	#include "../qcom/fg-gen4-batterydata-alium-3600mah.dtsi"
+	#include "fg-gen4-batterydata-sg865w-5000mah.dtsi"
+};
+
+&pm8150b_charger {
+	qcom,lpd-disable;
+};
+
+&pm8150b_fg {
+	qcom,fg-cutoff-voltage = <3400>;
+	qcom,fg-force-load-profile;
+};

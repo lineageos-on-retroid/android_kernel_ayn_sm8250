@@ -1,0 +1,31 @@
+&pm8150l_vadc {
+	gpio5_adc1@12 {
+		reg = <0x12>;
+		label = "gpio5_adc1";
+		qcom,ratiometric;
+		qcom,hw-settle-time = <200>;
+		qcom,pre-scaling = <1 1>;
+	};
+
+	gpio7_adc2@94 {
+		reg = <0x94>;
+		label = "gpio7_adc2";
+		qcom,pre-scaling = <1 3>;
+	};
+};
+
+&soc {
+	pm8150l_gpio6 {
+		compatible = "gpio5-pwm";
+		status = "ok";
+		pwms = <&pm8150l_pwm 0 100000>;
+		qcom,fan-en-gpio = <&tlmm 7 0x00>;
+		qcom,fan-fg-gpio = <&tlmm 0 0x2004>;
+		gpio5-pwm-state = <1>;
+		gpio5-pwm-duty-ns = <10000>;
+		gpio5-pwm-period-ns = <50000>;
+		pinctrl-names = "default", "fg_int";
+		pinctrl-0 = <&pmi_gpio6_pwm_active>;
+		pinctrl-1 = <&fg_int_default>;
+	};
+};
