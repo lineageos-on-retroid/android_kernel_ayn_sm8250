@@ -77,51 +77,6 @@
 			<175 0 &pdc 118 0>,
 			<177 0 &pdc 119 0>,
 			<179 0 &pdc 120 0>;
-
-	/* Battery */
-	fg_int_default: fg_int_default {
-		config {
-			bias-disable;
-			drive_strength = <0x02>;
-			pins = "gpio0";
-		};
-
-		mux {
-			function = "gpio";
-			pins = "gpio0";
-		};
-	};
-
-	/* Touchscreen */
-	pmx_ts_int_active {
-		ts_int_active: ts_int_active {
-			config {
-				bias-pull-up;
-				drive-strength = <8>;
-				pins = "gpio39";
-			};
-
-			mux {
-				function = "gpio";
-				pins = "gpio39";
-			};
-		};
-	};
-
-	pmx_ts_reset_active {
-		ts_reset_active: ts_reset_active {
-			config {
-				bias-pull-up;
-				drive-strength = <8>;
-				pins = "gpio38";
-			};
-
-			mux {
-				function = "gpio";
-				pins = "gpio38";
-			};
-		};
-	};
 };
 
 /* Audio */

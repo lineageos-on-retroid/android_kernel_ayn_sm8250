@@ -8,10 +8,10 @@
 &vendor {
 	kona_qrd_batterydata: qcom,battery-data {
 		qcom,batt-id-range-pct = <15>;
-		#include "fg-gen4-batterydata-sg865w-5000mah.dtsi"
-		#include "fg-gen4-batterydata-alium-3600mah.dtsi"
 		#include "fg-gen4-batterydata-mlp466274-3650mah.dtsi"
 		#include "fg-gen4-batterydata-atl466274-3650mah.dtsi"
+		#include "fg-gen4-batterydata-alium-3600mah.dtsi"
+		#include "fg-gen4-batterydata-sg865w-5000mah.dtsi"
 	};
 };
 
@@ -202,11 +202,6 @@
 };
 
 &soc {
-	extcon_demo: extcon-demo {
-		compatible = "extcon_demo";
-		status = "okay";
-	};
-
 	gpio_keys {
 		compatible = "gpio-keys";
 		label = "gpio-keys";
@@ -246,6 +241,12 @@
 		pinctrl-0 = <&pmi_gpio6_pwm_active>;
 		pinctrl-1 = <&fg_int_default>;
 	};
+
+	extcon_demo: extcon-demo {
+		compatible = "extcon_demo";
+		status = "okay";
+	};
+
 };
 
 &vreg_hap_boost {
