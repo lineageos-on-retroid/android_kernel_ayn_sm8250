@@ -1,7 +1,7 @@
 qcom,7439278_sg865w_5000mah_averaged_masterslave_sept25th2024 {
 	qcom,profile-revision = <24>;
 	qcom,max-voltage-uv = <4400000>;
-	qcom,fg-cc-cv-threshould-mv = <4390>;
+	qcom,fg-cc-cv-threshold-mv = <4390>;
 	qcom,fastchg-current-ma = <5325>;
 	qcom,jeita-fcc-ranges = <0 200 1775000
 							201 400 5325000
