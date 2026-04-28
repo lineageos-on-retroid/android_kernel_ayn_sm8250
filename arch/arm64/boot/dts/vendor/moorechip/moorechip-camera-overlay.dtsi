@@ -1,109 +1,109 @@
 &led_flash_rear {
-	status = "disable";
+	status = "disabled";
 };
 
 &led_flash_rear_aux {
-	status = "disable";
+	status = "disabled";
 };
 
 &led_flash_triple_rear {
-	status = "disable";
+	status = "disabled";
 };
 
 &led_flash_triple_rear_aux {
-	status = "disable";
+	status = "disabled";
 };
 
 &led_flash_triple_rear_aux2 {
-	status = "disable";
+	status = "disabled";
 };
 
 &soc {
 	qcom,cam-res-mgr {
-		status = "disable";
+		status = "disabled";
 	};
 };
 
 &actuator_rear {
-	status = "disable";
+	status = "disabled";
 };
 
 &actuator_rear_aux {
-	status = "disable";
+	status = "disabled";
 };
 
 &actuator_triple_wide {
-	status = "disable";
+	status = "disabled";
 };
 
 &actuator_triple_tele {
-	status = "disable";
+	status = "disabled";
 };
 
 &actuator_triple_uw {
-	status = "disable";
+	status = "disabled";
 };
 
 &eeprom_rear {
-	status = "disable";
+	status = "disabled";
 };
 
 &eeprom_rear_aux {
-	status = "disable";
+	status = "disabled";
 };
 
 &eeprom_triple_wide {
-	status = "disable";
+	status = "disabled";
 };
 
 &eeprom_triple_tele {
-	status = "disable";
+	status = "disabled";
 };
 
 &eeprom_triple_uw {
-	status = "disable";
+	status = "disabled";
 };
 
 &cam_cci0 {
 	qcom,cam-sensor0 {
-		status = "disable";
+		status = "disabled";
 	};
 
 	qcom,cam-sensor1 {
-		status = "disable";
+		status = "disabled";
 	};
 
 	qcom,cam-sensor4 {
-		status = "disable";
+		status = "disabled";
 	};
 
 	qcom,cam-sensor5 {
-		status = "disable";
+		status = "disabled";
 	};
 
 	qcom,cam-sensor6 {
-		status = "disable";
+		status = "disabled";
 	};
 };
 
 &eeprom_front {
-	status = "disable";
+	status = "disabled";
 };
 
 &eeprom_tof {
-	status = "disable";
+	status = "disabled";
 };
 
 &cam_cci1 {
 	qcom,cam-sensor2 {
-		status = "disable";
+		status = "disabled";
 	};
 
 	qcom,cam-sensor3 {
-		status = "disable";
+		status = "disabled";
 	};
 };
 
 &flash_led {
-	status = "disable";
+	status = "disabled";
 };
